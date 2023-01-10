@@ -7,7 +7,7 @@ package SlidingWindow;
 
 public class BestTimeToBuyAndSellStock {
     public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{7,6,4,3,1}));
+        System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}));
     }
 
     public static int maxProfit(int[] prices) {
@@ -15,12 +15,11 @@ public class BestTimeToBuyAndSellStock {
         int min = 0;
         int maxProfit = 0;
         while (max < prices.length) {
-            if (prices[min] < prices[max]) {
-                maxProfit = Math.max(maxProfit,prices[max]-prices[min]);
+            if (prices[max] > prices[min]) {
+                maxProfit = Math.max(maxProfit, prices[max] - prices[min]);
                 max++;
-            }
-            else{
-                min=max;
+            } else {
+                min = max;
                 max++;
             }
         }
